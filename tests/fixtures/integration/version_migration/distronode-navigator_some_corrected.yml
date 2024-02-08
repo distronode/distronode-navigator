@@ -3,7 +3,7 @@ distronode-navigator:
   distronode:
     config:
       help: true
-  distronode-builder:
+  ansible-builder:
     help: true
   execution-environment:
     pull:

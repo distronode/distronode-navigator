@@ -33,7 +33,7 @@ stdout_tests = (
             mode="stdout",
             execution_environment=True,
         ).join(),
-        present=["usage: distronode-builder [-h]"],
+        present=["usage: ansible-builder [-h]"],
     ),
     ShellCommand(
         comment="builder help-builder without ee",
@@ -42,7 +42,7 @@ stdout_tests = (
             mode="stdout",
             execution_environment=False,
         ).join(),
-        present=["usage: distronode-builder [-h]"],
+        present=["usage: ansible-builder [-h]"],
     ),
     ShellCommand(
         comment="builder help-builder with interactive with ee",
@@ -51,7 +51,7 @@ stdout_tests = (
             mode="interactive",
             execution_environment=True,
         ).join(),
-        present=["usage: distronode-builder [-h]"],
+        present=["usage: ansible-builder [-h]"],
     ),
     ShellCommand(
         comment="builder help-builder with interactive without ee",
@@ -60,7 +60,7 @@ stdout_tests = (
             mode="interactive",
             execution_environment=False,
         ).join(),
-        present=["usage: distronode-builder [-h]"],
+        present=["usage: ansible-builder [-h]"],
     ),
     ShellCommand(
         comment="build execution-environment without ee",

@@ -49,12 +49,12 @@ class Action(ActionBase):
     def _run_runner(self) -> tuple | None:
         """Spin up runner.
 
-        :raises RuntimeError: When distronode-builder can not be found
+        :raises RuntimeError: When ansible-builder can not be found
         :returns: The stdout, stderr and return code from runner
         """
-        distronode_builder_path = shutil.which("distronode-builder")
+        distronode_builder_path = shutil.which("ansible-builder")
         if distronode_builder_path is None:
-            msg = "'distronode-builder' executable not found"
+            msg = "'ansible-builder' executable not found"
             self._logger.error(msg)
             raise RuntimeError(msg)
 

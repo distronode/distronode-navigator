@@ -1,7 +1,7 @@
-"""Implementation of the asynchronous invocation of ``distronode-runner``.
+"""Implementation of the asynchronous invocation of ``ansible-runner``.
 
-Herein lies the ability to invoke ``distronode-runner`` in an async fashion.
-A queue is provided and ``distronode-runner`` uses ``pexpect`` to parse
+Herein lies the ability to invoke ``ansible-runner`` in an async fashion.
+A queue is provided and ``ansible-runner`` uses ``pexpect`` to parse
 standard out and error from the command run and populates the
 queue with messages.
 """
@@ -18,13 +18,13 @@ class CommandAsync(CommandBase):
     """A wrapper for the asynchronous runner."""
 
     def __init__(self, executable_cmd: str, queue: Queue, write_job_events: bool, **kwargs):
-        """Initialize the arguments for the ``run_command_async`` interface of ``distronode-runner``.
+        """Initialize the arguments for the ``run_command_async`` interface of ``ansible-runner``.
 
         For common arguments refer to the documentation of the ``CommandBase`` class.
 
         :param executable_cmd: The command to be invoked
-        :param queue: The queue to post events from ``distronode-runner``
-        :param write_job_events: Allows job_events to be processed by ``distronode-runner``
+        :param queue: The queue to post events from ``ansible-runner``
+        :param write_job_events: Allows job_events to be processed by ``ansible-runner``
         :param kwargs: The arguments for the async runner call
         """
         self._queue = queue
@@ -32,12 +32,12 @@ class CommandAsync(CommandBase):
         super().__init__(executable_cmd, **kwargs)
 
     def _event_handler(self, event):
-        """Handle the event from distronode-runner.
+        """Handle the event from ansible-runner.
 
-        :param event: The event from distronode-runner
+        :param event: The event from ansible-runner
         :returns: The value of ``self._write_job_events``, a boolean
         """
-        self._logger.debug("distronode-runner event handle: %s", event)
+        self._logger.debug("ansible-runner event handle: %s", event)
         new_event = deepcopy(event)
         self._queue.put(new_event)
         return self._write_job_events

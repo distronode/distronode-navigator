@@ -70,7 +70,7 @@ def check_for_distronode() -> tuple[list[LogMessage], list[ExitMessage]]:
             "distronode is required when running without an Distronode Execution Environment.",
             "Try one of",
             "     'pip install distronode-base'",
-            "     'pip install distronode-core'",
+            "     'pip install ansible-core'",
             "     'pip install distronode'",
             "or simply",
             "     '-ee' or '--execution-environment'",

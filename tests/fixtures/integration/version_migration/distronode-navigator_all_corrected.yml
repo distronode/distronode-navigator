@@ -16,7 +16,7 @@ distronode-navigator:
     playbook:
       help: true
       path: site.yml
-  distronode-builder:
+  ansible-builder:
     help: true
   execution-environment:
     pull:

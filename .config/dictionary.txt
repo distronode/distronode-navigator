@@ -71,7 +71,7 @@ maxsplit
 mkdocs
 mkdocstrings
 moduleauthor
-mqueue              # https://github.com/distronode/distronode-runner/issues/984
+mqueue              # https://github.com/distronode/ansible-runner/issues/984
 myproject
 netcommon           # Distronode network collection, seen in tests and README
 netconf

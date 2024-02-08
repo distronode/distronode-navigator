@@ -97,9 +97,9 @@ def test_no_warnings(import_path: str) -> None:
         "-W",
         "error",
         # NOTE: The following 2 exclusions are only necessary because
-        #       distronode-runner still uses `pkg_resources`
-        # NOTE: could not figure out how to ignore this warning only for distronode-runner
-        # https://github.com/distronode/distronode-runner/issues/1223
+        #       ansible-runner still uses `pkg_resources`
+        # NOTE: could not figure out how to ignore this warning only for ansible-runner
+        # https://github.com/distronode/ansible-runner/issues/1223
         "-W",
         "ignore: pkg_resources is deprecated as an API:DeprecationWarning",
         "-W",

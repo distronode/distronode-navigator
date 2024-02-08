@@ -158,7 +158,7 @@ class CustomHelpFormatter(HelpFormatter):
 
         :param prog: The program name
         """
-        long_string = "--rac  --distronode-runner-rotate-artifacts-count"
+        long_string = "--rac  --ansible-runner-rotate-artifacts-count"
         # 3 here accounts for the spaces in the ljust(6) below
         HelpFormatter.__init__(
             self,

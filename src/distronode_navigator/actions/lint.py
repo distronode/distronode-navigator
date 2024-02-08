@@ -1,18 +1,18 @@
 # cspell:ignore fqcn,FQCN
 
-"""This action provides distronode-lint results through distronode-navigator.
+"""This action provides ansible-lint results through distronode-navigator.
 
-Internally, it works by using distronode-runner to execute distronode-lint (optionally
-in an execution environment). When running distronode-lint, it passes
+Internally, it works by using ansible-runner to execute ansible-lint (optionally
+in an execution environment). When running ansible-lint, it passes
 ``-f codeclimate`` which requests JSON output on stdout. The JSON output contains
 a list of issues which we then report in the distronode-navigator UI.
 
 We allow users to dig into an individual issue using the standard :<lineno>
 commands, to learn more about the issue.
 
-The full specification for distronode-lint's use of JSON (for the codeclimate
+The full specification for ansible-lint's use of JSON (for the codeclimate
 formatter) can be found in src/distronodelint/formatters/__init__.py in the
-distronode-lint codebase.
+ansible-lint codebase.
 """
 from __future__ import annotations
 
@@ -50,7 +50,7 @@ from . import run_action
 
 
 class Severity(IntEnum):
-    """A mapping from distronode-lint severity to an integer represented internally.
+    """A mapping from ansible-lint severity to an integer represented internally.
 
     Primarily used for sorting.
     """
@@ -61,13 +61,13 @@ class Severity(IntEnum):
     CRITICAL = 40
     BLOCKER = 50
 
-    # If distronode-lint ever gives us something we don't expect, return this.
+    # If ansible-lint ever gives us something we don't expect, return this.
     # In practice, we reverse-sort, so this will always be last.
     UNKNOWN = -1
 
     @classmethod
     def _missing_(cls, value):
-        """Return unknown if distronode-lint ever returns something unexpected.
+        """Return unknown if ansible-lint ever returns something unexpected.
 
         :param value: The value
         :returns: A severity unknown
@@ -148,7 +148,7 @@ def massage_issue(issue: dict) -> dict:
     """
     massaged = issue.copy()
     massaged["__severity"] = massaged["severity"].capitalize()
-    # Version 6.1 and before of distronode-lint used this syntax
+    # Version 6.1 and before of ansible-lint used this syntax
     # "check_name": "[fqcn-builtins] Use FQCN for builtin actions."
     # Version 6.2 and later use this syntax
     # check_name": "fqcn-builtins", "description": "Use FQCN for builtin actions."
@@ -219,7 +219,7 @@ class Action(ActionBase):
             raise RuntimeError(msg)
 
     def _run_runner(self) -> tuple[str, str, int]:
-        """Spin up runner to run distronode-lint, either in an exec env or not.
+        """Spin up runner to run ansible-lint, either in an exec env or not.
 
         :returns: The output, errors and return code
         """
@@ -268,7 +268,7 @@ class Action(ActionBase):
 
         kwargs["cmdline"] = cmd_args
 
-        runner = Command(executable_cmd="distronode-lint", **kwargs)
+        runner = Command(executable_cmd="ansible-lint", **kwargs)
         return runner.run()
 
     def run_stdout(self) -> RunStdoutReturn:
@@ -283,7 +283,7 @@ class Action(ActionBase):
     @staticmethod
     def _pull_out_json_or_fatal(stdout: str) -> str | None:
         """
-        Attempt to pull out JSON line from distronode-lint raw output.
+        Attempt to pull out JSON line from ansible-lint raw output.
 
         Note that stdout and stderr get munged together by docker/podman, so we
         need to do some trickery to try to figure out the actual JSON line vs,
@@ -406,17 +406,17 @@ class Action(ActionBase):
         :returns: Indication of success
         """
         output, _error, return_code = self._run_runner()
-        self._logger.debug("Output from distronode-lint run (rc=%d): %s", return_code, output)
+        self._logger.debug("Output from ansible-lint run (rc=%d): %s", return_code, output)
 
-        # distronode-lint failed
-        if return_code != 0 and "distronode-lint: No such file or directory" in output:
+        # ansible-lint failed
+        if return_code != 0 and "ansible-lint: No such file or directory" in output:
             installed_or_ee = (
                 "in the execution environment you are using"
                 if self._args.execution_environment
                 else "installed"
             )
             self._fatal(
-                "distronode-lint executable could not be found. Ensure 'distronode-lint' "
+                "ansible-lint executable could not be found. Ensure 'ansible-lint' "
                 f"is {installed_or_ee} and try again.",
             )
             self._current_issue_count = 0
@@ -432,8 +432,8 @@ class Action(ActionBase):
         try:
             raw_issues = json.loads(out_without_warnings)
         except json.JSONDecodeError as exc:
-            self._logger.debug("Failed to parse 'distronode-lint' JSON response: %s", str(exc))
-            messages = ["Could not parse 'distronode-lint' output."]
+            self._logger.debug("Failed to parse 'ansible-lint' JSON response: %s", str(exc))
+            messages = ["Could not parse 'ansible-lint' output."]
             without_ansi = remove_ansi(output)
             messages.extend(without_ansi.splitlines())
             notification = error_notification(messages)

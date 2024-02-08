@@ -1,4 +1,4 @@
-"""Herein lies the ability for distronode-runner to run the distronode-inventory command."""
+"""Herein lies the ability for ansible-runner to run the distronode-inventory command."""
 
 from __future__ import annotations
 

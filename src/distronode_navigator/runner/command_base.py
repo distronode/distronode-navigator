@@ -1,4 +1,4 @@
-"""Herein lies the base class for running commands using distronode-runner.
+"""Herein lies the base class for running commands using ansible-runner.
 
 All attributes common to a subprocess or async command are defined here.
 """
@@ -21,7 +21,7 @@ class CommandBase(Base):
         inventory: list | None = None,
         **kwargs,
     ):
-        """Handle common arguments of ``run_command`` interface for ``distronode-runner``.
+        """Handle common arguments of ``run_command`` interface for ``ansible-runner``.
 
         :param executable_cmd: The command to be invoked
         :param cmdline: A list of arguments to be passed to the executable command
@@ -36,7 +36,7 @@ class CommandBase(Base):
         super().__init__(**kwargs)
 
     def generate_run_command_args(self) -> None:
-        """Generate arguments required to be passed to distronode-runner."""
+        """Generate arguments required to be passed to ansible-runner."""
         if self._playbook:
             self._cmdline.insert(0, self._playbook)
 

@@ -7,17 +7,17 @@ images:
 
 dependencies:
   distronode_core:
-    package_pip: distronode-core
+    package_pip: ansible-core
 
   distronode_runner:
-    package_pip: distronode-runner
+    package_pip: ansible-runner
 
   galaxy:
     collections:
       - distronode.utils
 
   python:
-    - distronode-lint
+    - ansible-lint
 additional_build_steps:
   append_final:
     - RUN echo "Hello from EE"

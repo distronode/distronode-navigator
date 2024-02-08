@@ -1,1 +1,1 @@
-mkdocs-ansible >= mkdocs-distronode
+mkdocs-ansible

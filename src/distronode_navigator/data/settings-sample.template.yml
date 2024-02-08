@@ -35,24 +35,24 @@ distronode-navigator:
       help: False
       # {{ distronode.playbook.path }}
       path: site.yml
-  distronode-builder:
-    # {{ distronode-builder.help }}
+  ansible-builder:
+    # {{ ansible-builder.help }}
     help: False
-    # {{ distronode-builder.workdir }}
+    # {{ ansible-builder.workdir }}
     workdir: /tmp/
-  distronode-lint:
-    # {{ distronode-lint.config }}
+  ansible-lint:
+    # {{ ansible-lint.config }}
     config: ~/lint-config.yml
-    # {{ distronode-lint.lintables }}
+    # {{ ansible-lint.lintables }}
     lintables: ~/myproject/
-  distronode-runner:
-    # {{ distronode-runner.artifact-dir }}
+  ansible-runner:
+    # {{ ansible-runner.artifact-dir }}
     artifact-dir: ./runner-artifacts
-    # {{ distronode-runner.rotate-artifacts-count }}
+    # {{ ansible-runner.rotate-artifacts-count }}
     rotate-artifacts-count: 10
-    # {{ distronode-runner.timeout }}
+    # {{ ansible-runner.timeout }}
     timeout: 300
-    # {{ distronode-runner.job-events }}
+    # {{ ansible-runner.job-events }}
     job-events: True
   # {{ app }}
   app: welcome

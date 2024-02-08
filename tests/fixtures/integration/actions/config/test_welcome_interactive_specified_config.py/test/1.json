@@ -131,7 +131,7 @@
         "116│Diff context                                                                                                           True                 default              3",
         "117│Display args to stdout                                                                                                 True                 default              False",
         "118│Display skipped hosts                                                                                                  True                 default              True",
-        "119│Docsite root url                                                                                                       True                 default              https://docs.distronode.com/distronode-core/",
+        "119│Docsite root url                                                                                                       True                 default              https://docs.distronode.com/ansible-core/",
         "120│Doc fragment plugin path                                                                                               True                 default              ['/home/user/.distronode/plugins/doc_fragments...",
         "121│Duplicate yaml dict key                                                                                                True                 default              warn",
         "122│Enable task debugger                                                                                                   True                 default              False",

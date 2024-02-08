@@ -132,7 +132,7 @@ there expand and reach to the desired unit or integration test and hit
 - `src/distronode_navigator/image_manager` contains all the operations related to
   introspect, access, pull container images.
 - `src/distronode_navigator/runner` herein lies ability for all the interaction
-  with distronode-runner.
+  with ansible-runner.
 - `src/distronode_navigator/tm_tokenize` has the tokenization subsystem which
   allows for syntax highlighting of json and yaml files.
 - `src/distronode_navigator/ui_framework` has the implementation of our

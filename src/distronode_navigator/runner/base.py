@@ -1,7 +1,7 @@
 # cspell:ignore envvars
-"""Herein lies the base class for all interaction with distronode-runner.
+"""Herein lies the base class for all interaction with ansible-runner.
 
-Attributes common to all distronode-runner calls are defined within the base class.
+Attributes common to all ansible-runner calls are defined within the base class.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from distronode_runner import Runner
 
 
 class Base:
-    """Base class for distronode-runner calls."""
+    """Base class for ansible-runner calls."""
 
     # pylint: disable=too-many-arguments
     # pylint: disable=too-many-instance-attributes
@@ -37,7 +37,7 @@ class Base:
         rotate_artifacts: int | None = None,
         timeout: int | None = None,
     ) -> None:
-        """Handle the common argument for the distronode-runner interface class.
+        """Handle the common argument for the ansible-runner interface class.
 
         :param container_engine: Container engine used to isolate execution
         :param container_options: List of container options to pass to execution engine
@@ -45,7 +45,7 @@ class Base:
         :param execution_environment_image: Container image to use when running an command
         :param navigator_mode: Valid value is either ``stdout`` or ``interactive``. If value is
             set to ``stdout`` passed the ``stdin`` of current running process
-            is passed to ``distronode-runner`` which enables receiving command
+            is passed to ``ansible-runner`` which enables receiving command
             line prompts after the executing the command. If value is set to
             ``interactive`` the ``distronode-navigator` will run using
             text user interface (TUI).
@@ -142,7 +142,7 @@ class Base:
             and os.path.exists(self._private_data_dir)
         ):
             self._logger.debug(
-                "delete temporary distronode-runner private_data_dir at path %s",
+                "delete temporary ansible-runner private_data_dir at path %s",
                 self._private_data_dir,
             )
             shutil.rmtree(self._private_data_dir, ignore_errors=True)

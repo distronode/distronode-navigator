@@ -30,7 +30,7 @@ https://distronode.readthedocs.io/projects/navigator/contributing/guidelines/
 Getting started with distronode-navigator is as simple as:
 
 ```
-pip3 install 'distronode-navigator[distronode-core]'
+pip3 install 'distronode-navigator[ansible-core]'
 distronode-navigator --help
 ```
 
@@ -39,14 +39,14 @@ distronode-navigator --help
 
 By default, distronode-navigator uses a container runtime (`podman` or `docker`,
 whichever it finds first) and runs Distronode within an execution environment
-(a pre-built container image which includes [distronode-core] along with a set
+(a pre-built container image which includes [ansible-core] along with a set
 of Distronode collections.)
 
 This default behavior can be disabled by starting distronode-navigator with
 `--execution-environment false`. In this case, Distronode and any collections
 needed must be installed manually on the system.
 
-[distronode-core]: https://docs.distronode.com/distronode-core/devel
+[ansible-core]: https://docs.distronode.com/ansible-core/devel
 [Python venv doc]: https://docs.python.org/3/library/venv.html
 
 Additional `Linux`, `macOS` and `Windows with WSL2` installation

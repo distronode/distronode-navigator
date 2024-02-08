@@ -224,7 +224,7 @@ enable = [
 addopts = "-n=auto --dist=loadfile --maxfail=10 --durations=30 --showlocals"
 filterwarnings = [
   "error",
-  # https://github.com/distronode/distronode-runner/issues/1246
+  # https://github.com/distronode/ansible-runner/issues/1246
   "ignore::ResourceWarning:distronode_runner",
   "ignore::pytest.PytestUnraisableExceptionWarning",
   "ignore::DeprecationWarning:distronode_runner"

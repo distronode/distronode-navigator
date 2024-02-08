@@ -26,7 +26,7 @@
         "11│  path: tests/fixtures/integration/actions/lint/borked/playbook.yml",
         "12│severity: major",
         "13│type: issue",
-        "14│url: https://distronode-lint.readthedocs.io/rules/name/",
+        "14│url: https://ansible-lint.readthedocs.io/rules/name/",
         "^b/PgUp page up             ^f/PgDn page down             ↑↓ scroll             esc back             - previous             + next             [0-9] goto             :help help            Issues: 12"
     ]
 }

@@ -639,36 +639,36 @@ class NavigatorPostProcessor:
         messages: list[LogMessage] = []
         exit_messages: list[ExitMessage] = []
 
-        # If not using an EE, check for distronode-lint before we even pass off to
+        # If not using an EE, check for ansible-lint before we even pass off to
         # the lint action.
         if config.app == "lint" and not config.execution_environment:
-            distronode_lint_location = shutil.which("distronode-lint")
+            distronode_lint_location = shutil.which("ansible-lint")
             if distronode_lint_location is None:
                 exit_messages.append(
-                    ExitMessage(message="distronode-lint command could not be found."),
+                    ExitMessage(message="ansible-lint command could not be found."),
                 )
                 exit_messages.append(
                     ExitMessage(
                         message=(
-                            "Try 'pip install distronode-lint' or consider using an execution "
-                            "environment which provides distronode-lint."
+                            "Try 'pip install ansible-lint' or consider using an execution "
+                            "environment which provides ansible-lint."
                         ),
                         prefix=ExitPrefix.HINT,
                     ),
                 )
             else:
                 try:
-                    subprocess.run("distronode-lint --version", shell=True, check=True)
+                    subprocess.run("ansible-lint --version", shell=True, check=True)
                 except subprocess.CalledProcessError:
                     exit_messages.append(
                         ExitMessage(
-                            message=("distronode-lint does not seem to be installed correctly.")
+                            message=("ansible-lint does not seem to be installed correctly.")
                         ),
                     )
                     exit_messages.append(
                         ExitMessage(
                             message=(
-                                "Ensure the command `distronode-lint --version` can be run prior to"
+                                "Ensure the command `ansible-lint --version` can be run prior to"
                                 " using distronode-navigator"
                             ),
                             prefix=ExitPrefix.HINT,

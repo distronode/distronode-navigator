@@ -12,9 +12,9 @@ some examples.
 Use `distronode-navigator exec -- distronode` from shell. The exec subcommand requires
 execution environment support.
 
-### `distronode-builder`
+### `ansible-builder`
 
-Use `distronode-navigator builder` from shell.`distronode-builder` is installed with
+Use `distronode-navigator builder` from shell.`ansible-builder` is installed with
 `distronode-navigator`
 
 ### `distronode-config`
@@ -37,10 +37,10 @@ Use `distronode-navigator inventory` from shell, or `:inventory` from the
 Use `distronode-navigator exec -- distronode-galaxy ...` from shell. The exec
 subcommand requires execution environment support.
 
-### `distronode-lint`
+### `ansible-lint`
 
 Use `distronode-navigator lint` from shell, or `:lint` from the `distronode-navigator`
-prompt. `distronode-lint` needs to be installed locally or in the selected
+prompt. `ansible-lint` needs to be installed locally or in the selected
 execution-environment.
 
 ### `distronode-playbook`

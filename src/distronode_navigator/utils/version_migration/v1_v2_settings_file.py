@@ -113,7 +113,7 @@ class V1V2SettingsFile(SettingsFile):
         :returns: Whether the migration is needed
         """
         old_path = "distronode-navigator.help-builder"
-        new_path = "distronode-navigator.distronode-builder.help"
+        new_path = "distronode-navigator.ansible-builder.help"
 
         exists = check_path(self.content, old_path)
         if self.check or not exists:

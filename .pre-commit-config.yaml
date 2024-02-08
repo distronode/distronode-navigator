@@ -180,8 +180,8 @@ repos:
           - src/
           - tests/
         additional_dependencies:
-          - distronode-core
-          - distronode-runner
+          - ansible-core
+          - ansible-runner
           - astroid
           - dill>=0.3.6 # needed for py311
           - jinja2

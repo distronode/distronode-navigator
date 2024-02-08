@@ -37,7 +37,7 @@ base_steps = (
     step_back,
     UiTestStep(user_input=":2", comment="goto Distronode information", present=["collections:"]),
     step_back,
-    UiTestStep(user_input=":3", comment="goto Python information", present=["distronode-runner"]),
+    UiTestStep(user_input=":3", comment="goto Python information", present=["ansible-runner"]),
     step_back,
     UiTestStep(user_input=":4", comment="goto System information", present=["basesystem"]),
     step_back,

@@ -71,7 +71,7 @@
           },
           "type": "object"
         },
-        "distronode-builder": {
+        "ansible-builder": {
           "additionalProperties": false,
           "type": "object",
           "properties": {
@@ -83,7 +83,7 @@
             }
           }
         },
-        "distronode-lint": {
+        "ansible-lint": {
           "additionalProperties": false,
           "properties": {
             "config": {
@@ -95,7 +95,7 @@
           },
           "type": "object"
         },
-        "distronode-runner": {
+        "ansible-runner": {
           "additionalProperties": false,
           "properties": {
             "artifact-dir": {

@@ -37,9 +37,9 @@ BASE_SHORT_CLI = """
 """
 
 BASE_LONG_CLI = """
---distronode-runner-artifact-dir /tmp/test1
---distronode-runner-rotate-artifacts-count 10
---distronode-runner-timeout 300
+--ansible-runner-artifact-dir /tmp/test1
+--ansible-runner-rotate-artifacts-count 10
+--ansible-runner-timeout 300
 --container-engine docker
 --container-options=--net=host
 --display-color false
@@ -244,7 +244,7 @@ ENV_VAR_DATA = [
     ("images_details", "distronode_version,python_version", ["distronode_version", "python_version"]),
     ("inventory", "/tmp/test1.yaml,/tmp/test2.yml", ["/tmp/test1.yaml", "/tmp/test2.yml"]),
     ("inventory_column", "t1,t2,t3", ["t1", "t2", "t3"]),
-    ("lint_config", "/tmp/distronode-lint-config.yml", "/tmp/distronode-lint-config.yml"),
+    ("lint_config", "/tmp/ansible-lint-config.yml", "/tmp/ansible-lint-config.yml"),
     ("lintables", "/tmp/lintables", "/tmp/lintables"),
     ("log_append", "false", False),
     ("log_file", "/tmp/app.log", "/tmp/app.log"),

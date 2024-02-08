@@ -1,12 +1,12 @@
-"""Herein lies the ability for distronode-runner to run the distronode-config command."""
+"""Herein lies the ability for ansible-runner to run the distronode-config command."""
 
 from __future__ import annotations
 
 import warnings
 
 
-# Remove this catch-all once newer distronode-runner is released
-# https://github.com/distronode/distronode-runner/issues/1223
+# Remove this catch-all once newer ansible-runner is released
+# https://github.com/distronode/ansible-runner/issues/1223
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     from distronode_runner import get_distronode_config

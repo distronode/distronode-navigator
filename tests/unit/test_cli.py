@@ -265,4 +265,4 @@ def test_for_version_logged(
         # A SystemExit happens here because the container vanishes quickly
         main()
     assert "distronode-navigator==" in caplog.text
-    assert "distronode-runner==" in caplog.text
+    assert "ansible-runner==" in caplog.text

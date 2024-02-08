@@ -39,7 +39,7 @@ playbook adjacent collections directory. (eg
 playbook directory is automatically mounted in the execution environment and the
 collections should be found. Another option is to build the collections into an
 execution environment using
-[distronode builder](https://distronode-builder.readthedocs.io/en/latest/). This was
+[distronode builder](https://ansible-builder.readthedocs.io/en/latest/). This was
 done to help playbook developers author playbooks that are production ready, as
 both distronode controller and awx support playbook adjacent collection
 directories. If the collections are in another directory, the

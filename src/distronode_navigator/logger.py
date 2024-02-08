@@ -69,8 +69,8 @@ def setup_logger(args: ApplicationConfiguration) -> None:
     logger.setLevel(log_level)
     logger.info("New %s instance, logging initialized", args.application_name_dashed)
 
-    # set distronode-runner logs
-    runner_logger = logging.getLogger("distronode-runner")
+    # set ansible-runner logs
+    runner_logger = logging.getLogger("ansible-runner")
     runner_logger.setLevel(log_level)
     runner_logger.addHandler(handler)
-    logger.info("New distronode-runner instance, logging initialized")
+    logger.info("New ansible-runner instance, logging initialized")

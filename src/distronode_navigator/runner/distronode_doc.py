@@ -1,4 +1,4 @@
-"""Herein lies the ability for distronode-runner to run the distronode-doc command."""
+"""Herein lies the ability for ansible-runner to run the distronode-doc command."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from .base import Base
 
 class DistronodeDoc(Base):
     # pylint: disable=too-many-arguments
-    """An interface to ``distronode-runner`` for running the ``distronode-doc`` command."""
+    """An interface to ``ansible-runner`` for running the ``distronode-doc`` command."""
 
     def fetch_plugin_doc(
         self,
