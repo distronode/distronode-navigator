@@ -4,11 +4,11 @@
 #
 #    pip-compile --extra=docs --extra=test --no-annotate --output-file=requirements.txt --resolver=backtracking --strip-extras --unsafe-package=resolvelib --unsafe-package=ruamel-yaml-clib pyproject.toml
 #
-distronode-builder==3.0.0
-distronode-compat==4.1.10
-distronode-core==2.16.1
-distronode-lint==6.22.1
-distronode-runner==2.3.4
+ansible-builder>=distronode-builder
+ansible-compat>=distronode-compat
+ansible-core>=distronode-core
+ansible-lint>=distronode-lint
+ansible-runner>=distronode-runner
 attrs==23.2.0
 babel==2.14.0
 beautifulsoup4==4.12.2
