@@ -1,0 +1,39 @@
+{
+    "name": "test[ensure env vars get set from config  clear && distronode-navigator exec /bin/env --ee True --ll debug --mode stdout]",
+    "index": 2,
+    "comment": "ensure env vars get set from config",
+    "additional_information": {
+        "present": [
+            "DISTRONODE_COLLECTIONS_PATHS=/tmp/collections"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "HOSTNAME=XXXXXXXX",
+        "DISTRONODE_COLLECTIONS_PATHS=/tmp/collections",
+        "DISTTAG=f37container",
+        "CONTAINER_NAME=creator-ee:v0.22.0",
+        "PWD=/home/user/github/distronode-navigator",
+        "DISTRONODE_NAVIGATOR_PLAYBOOK_ARTIFACT_SAVE_AS=/home/user/github/distronode-navigator/.test_logs/integration/actions/exec/test_stdout_file.py/test_stdout_file_py/distronode-navigator.log/playbook-artifact.log",
+        "container=oci",
+        "AWX_ISOLATED_DATA_DIR=/runner/artifacts/00000000-0000-0000-0000-000000000000",
+        "HOME=/home/runner",
+        "FGC=f37",
+        "DISTRONODE_STDOUT_CALLBACK=awx_display",
+        "DISTRONODE_CALLBACK_PLUGINS=/runner/artifacts/00000000-0000-0000-0000-000000000000/callback",
+        "DISTRONODE_UNSAFE_WRITES=1",
+        "DISTRONODE_CACHE_PLUGIN_CONNECTION=/runner/artifacts/00000000-0000-0000-0000-000000000000/fact_cache",
+        "TERM=xterm",
+        "SHLVL=0",
+        "DISTRONODE_RETRY_FILES_ENABLED=False",
+        "DISTRONODE_NAVIGATOR_COLLECTION_DOC_CACHE_PATH=/home/user/github/distronode-navigator/.test_logs/integration/actions/exec/test_stdout_file.py/test_stdout_file_py/distronode-navigator.log/collection_doc_cache.db",
+        "DISTRONODE_NAVIGATOR_LOG_FILE=/home/user/github/distronode-navigator/.test_logs/integration/actions/exec/test_stdout_file.py/test_stdout_file_py/distronode-navigator.log/distronode-navigator.log",
+        "DISTRONODE_HOST_KEY_CHECKING=False",
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "DISTRONODE_NAVIGATOR_PULL_POLICY=never",
+        "DISTRONODE_NAVIGATOR_CONFIG=/home/user/github/distronode-navigator/tests/fixtures/integration/actions/exec/distronode-navigator.yaml",
+        "DISTRONODE_NAVIGATOR_LOG_LEVEL=debug",
+        "(venv) bash$"
+    ]
+}

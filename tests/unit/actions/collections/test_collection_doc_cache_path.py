@@ -1,0 +1,71 @@
+"""Test the use of ``collection-doc-cache-path`` through to runner."""
+
+import shlex
+
+from pathlib import Path
+from typing import NamedTuple
+
+import pytest
+
+from distronode_navigator import cli
+
+
+class TstData(NamedTuple):
+    """Store test data."""
+
+    description: str
+    path: str
+
+
+DOC_CACHE_PATHS = (
+    TstData(description="cwd", path="./cache.db"),
+    TstData(description="tmp dir", path="../cache.db"),
+)
+
+
+def _id_description(value):
+    """Generate id for a test.
+
+    :param value: Test identifier
+    :returns: Test ID descriptor
+    """
+    return value.description
+
+
+class DuplicateMountError(RuntimeError):
+    """An exception specific to the duplicate mount test for collections."""
+
+
+@pytest.mark.parametrize("doc_cache_path", DOC_CACHE_PATHS, ids=_id_description)
+@pytest.mark.usefixtures("patch_curses")
+def test_for_duplicates_sources(
+    doc_cache_path,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    mocker,
+):
+    """Ensure duplicate volume mounts are not passed to runner.
+
+    :param doc_cache_path: The test data
+    :param monkeypatch: The monkeypatch fixture
+    :param tmp_path: The tmp directory
+    :param mocker: The mocker fixture
+    """
+    working_dir = tmp_path / "working_dir"
+    working_dir.mkdir()
+    cdc_full_path = working_dir / doc_cache_path.path
+    command = f"distronode-navigator collections '--cdcp={cdc_full_path!s}' --pp never"
+    monkeypatch.setattr("sys.argv", shlex.split(command))
+    run_cmd_mocked = mocker.patch(
+        "distronode_navigator.runner.command.run_command",
+        side_effect=DuplicateMountError,
+    )
+    monkeypatch.chdir(working_dir)
+    monkeypatch.setenv("DISTRONODE_NAVIGATOR_ALLOW_UI_TRACEBACK", "true")
+    with pytest.raises(DuplicateMountError):
+        cli.main()
+    _args, kwargs = run_cmd_mocked.call_args
+    host_cwd = Path(kwargs["host_cwd"])
+    mounts = kwargs["container_volume_mounts"]
+    sources = [Path(mount.split(":")[0]).parents[0] for mount in mounts]
+    assert host_cwd not in sources

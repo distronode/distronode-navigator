@@ -1,0 +1,5 @@
+- hosts: localhost
+  gather_facts: False
+  tasks:
+    - distronode.builtin.debug:
+        msg: success

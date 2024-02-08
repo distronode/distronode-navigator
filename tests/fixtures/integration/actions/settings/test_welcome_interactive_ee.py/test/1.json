@@ -1,0 +1,40 @@
+{
+    "name": "test[1-:settings-enter settings from welcome screen]",
+    "index": 1,
+    "comment": "enter settings from welcome screen",
+    "additional_information": {
+        "present": [
+            "Distronode runner artifact dir",
+            "Help config"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "   Name                                       Default  Source                       Current",
+        " 0│Distronode runner artifact dir                True     Not set                      Not set                                                                                                                                                                                                                ▒",
+        " 1│Distronode runner rotate artifacts count      True     Not set                      Not set                                                                                                                                                                                                                ▒",
+        " 2│Distronode runner timeout                     False    Environment variable         42                                                                                                                                                                                                                     ▒",
+        " 3│Distronode runner write job events            True     Defaults                     False                                                                                                                                                                                                                  ▒",
+        " 4│App                                        True     Defaults                     XXXXXXX",
+        " 5│Cmdline                                    True     Not set                      Not set                                                                                                                                                                                                                ▒",
+        " 6│Collection doc cache path                  False    Environment variable         XXXXXXX",
+        " 7│Config                                     True     Not set                      Not set                                                                                                                                                                                                                ▒",
+        " 8│Container engine                           False    Automatically determined     podman                                                                                                                                                                                                                 ▒",
+        " 9│Container options                          True     Not set                      Not set                                                                                                                                                                                                                ▒",
+        "10│Current settings file                      True     None                         XXXXXXX",
+        "11│Display color                              True     Defaults                     True",
+        "12│Editor command                             True     Defaults                     vi +{line_number} {filename}",
+        "13│Editor console                             True     Defaults                     True",
+        "14│Enable prompts                             True     Defaults                     False",
+        "15│Exec command                               True     Defaults                     /bin/bash",
+        "16│Exec shell                                 True     Defaults                     True",
+        "17│Execution environment                      True     Command line                 True",
+        "18│Execution environment image                True     Defaults                     ghcr.io/distronode/creator-ee:v0.22.0",
+        "19│Execution environment volume mounts        True     Not set                      Not set",
+        "20│Format                                     True     Defaults                     yaml",
+        "21│Help builder                               True     Defaults                     False",
+        "22│Help config                                True     Defaults                     False",
+        "^b/PgUp page up                                      ^f/PgDn page down                                      ↑↓ scroll                                      esc back                                      [0-9] goto                                      :help help"
+    ]
+}

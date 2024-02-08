@@ -1,0 +1,40 @@
+{
+    "name": "test[8-:f-clear filter, full list]",
+    "index": 8,
+    "comment": "clear filter, full list",
+    "additional_information": {
+        "present": [
+            "Action warnings",
+            "Callbacks enabled"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "    Name                                                                                                          Default               Source                Current",
+        "  0│Action warnings                                                                                               True                  default               True                                                                                                                                         ▒",
+        "  1│Agnostic become prompt                                                                                        True                  default               True                                                                                                                                         ▒",
+        "  2│Distronode connection path                                                                                       True                  default               None                                                                                                                                         ▒",
+        "  3│Distronode cow acceptlist                                                                                        True                  default               ['bud-frogs', 'bunny', 'cheese', 'daemon', 'def...",
+        "  4│Distronode cow path                                                                                              True                  default               None",
+        "  5│Distronode cow selection                                                                                         True                  default               default",
+        "  6│Distronode force color                                                                                           True                  default               False",
+        "  7│Distronode home                                                                                                  True                  default               /home/user/.distronode",
+        "  8│Distronode nocolor                                                                                               True                  default               False",
+        "  9│Distronode nocows                                                                                                True                  default               False",
+        " 10│Distronode pipelining                                                                                            True                  default               False",
+        " 11│Any errors fatal                                                                                              True                  default               False",
+        " 12│Become allow same user                                                                                        True                  default               False",
+        " 13│Become password file                                                                                          True                  default               None",
+        " 14│Become plugin path                                                                                            True                  default               XXXXXXX",
+        " 15│Cache plugin                                                                                                  False                 env                   jsonfile",
+        " 16│Cache plugin connection                                                                                       False                 env                   XXXXXXX",
+        " 17│Cache plugin prefix                                                                                           True                  default               distronode_facts",
+        " 18│Cache plugin timeout                                                                                          False                 env                   42",
+        " 19│Callbacks enabled                                                                                             True                  default               []",
+        " 20│Collections on distronode version mismatch                                                                       True                  default               warning",
+        " 21│Collections paths                                                                                             True                  default               XXXXXXX",
+        " 22│Collections scan sys path                                                                                     True                  default               True",
+        "^b/PgUp page up                                      ^f/PgDn page down                                      ↑↓ scroll                                      esc back                                      [0-9] goto                                      :help help"
+    ]
+}

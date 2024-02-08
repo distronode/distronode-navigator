@@ -1,0 +1,17 @@
+{
+    "name": "test[1-:1-visit host from inventory specified in distronode.cfg]",
+    "index": 1,
+    "comment": "visit host from inventory specified in distronode.cfg",
+    "additional_information": {
+        "present": [
+            "from.distronode.cfg"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "  Inventory hostname                                                                                            Distronode network os                                                                                            Distronode network cli ssh type                                                                                                                                           Distronode connection",
+        "0│from.distronode.cfg                                                                                              None                                                                                                          None                                                                                                                                                                   None",
+        "^b/PgUp page up                                                                       ^f/PgDn page down                                                                       ↑↓ scroll                                                                       esc back                                                                       [0-9] goto                                                                       :help help"
+    ]
+}

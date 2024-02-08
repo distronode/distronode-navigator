@@ -1,0 +1,27 @@
+{
+    "name": "test[clear-&&-cd-/tests/fixtures/integration/actions/lint/..-;--distronode-navigator-lint-/tests/fixtures/integration/actions/lint---ee-true---ll-debug---mode-stdout-lint-stdout-with-errors-['commands-should-not-change-things']-[]-true-0-search-for-the-shell-prompt]",
+    "index": 0,
+    "comment": "lint stdout with errors",
+    "additional_information": {
+        "present": [
+            "Commands should not change things"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "fqcn[action-core]: Use FQCN for builtin module actions (command).",
+        "lint/borked/roles/yep/tasks/main.yml:1 Use `distronode.builtin.command` or `distronode.legacy.command` instead.",
+        "name[missing]: All tasks should be named.",
+        "lint/borked/roles/yep/tasks/main.yml:1 Task/Handler: command echo 'oh no, no name'",
+        "no-changed-when: Commands should not change things if nothing needs doing.",
+        "lint/borked/roles/yep/tasks/main.yml:1 Task/Handler: command echo 'oh no, no name'",
+        "fqcn[action-core]: Use FQCN for builtin module actions (debug).",
+        "lint/borked/roles/yep/tasks/main.yml:3 Use `distronode.builtin.debug` or `distronode.legacy.debug` instead.",
+        "name[missing]: All tasks should be named.",
+        "lint/borked/roles/yep/tasks/main.yml:3 Task/Handler: debug msg=boo!",
+        "no-free-form: Avoid using free-form when calling module actions. (debug) (warning)",
+        "lint/borked/roles/yep/tasks/main.yml:3 Task/Handler: debug msg=boo!",
+        "(venv) bash$"
+    ]
+}

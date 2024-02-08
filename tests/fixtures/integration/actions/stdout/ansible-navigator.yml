@@ -1,0 +1,6 @@
+---
+distronode-navigator:
+  inventory-columns:
+    - distronode_network_os
+    - distronode_network_cli_ssh_type
+    - distronode_connection

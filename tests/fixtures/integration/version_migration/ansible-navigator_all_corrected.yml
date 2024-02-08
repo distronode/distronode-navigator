@@ -1,0 +1,32 @@
+---
+distronode-navigator:
+  distronode:
+    config:
+      help: true
+      path: ./distronode.cfg
+    doc:
+      help: true
+      plugin:
+        name: debug
+        type: module
+    inventory:
+      entries:
+      - ./inventory.yaml
+      help: true
+    playbook:
+      help: true
+      path: site.yml
+  distronode-builder:
+    help: true
+  execution-environment:
+    pull:
+      policy: never
+    volume-mounts:
+    - dest: /tmp/foo
+      options: Z
+      src: /tmp/foo
+  logging:
+    append: false
+    level: debug
+  playbook-artifact:
+    save-as: '{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json'

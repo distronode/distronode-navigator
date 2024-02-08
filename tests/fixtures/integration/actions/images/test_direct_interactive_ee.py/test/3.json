@@ -1,0 +1,34 @@
+{
+    "name": "test[03-:0-goto Image information]",
+    "index": 3,
+    "comment": "goto Image information",
+    "additional_information": {
+        "present": [
+            "architecture:"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "Image: creator-ee:v0.22.0 (primary) (Information collected from image inspection)",
+        "  0│---                                                                                                                                                                                                ▒",
+        "  1│details:                                                                                                                                                                                           ▒",
+        "  2│  annotations: {}",
+        "  3│  architecture: amd64",
+        "  4│  author: ''",
+        "  5│  comment: Created by Image Factory",
+        "  6│  config:",
+        "  7│    entrypoint:",
+        "  8│    - entrypoint",
+        "  9│    env:",
+        " 10│    - DISTTAG=f37container",
+        " 11│    - FGC=f37",
+        " 12│    - container=oci",
+        " 13│    - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        " 14│    - CONTAINER_NAME=creator-ee:v0.22.0",
+        " 15│    labels:",
+        " 16│      distronode-execution-environment: 'true'",
+        " 17│      io.buildah.version: 1.23.1",
+        "^b/PgUp page up                            ^f/PgDn page down                            ↑↓ scroll                            esc back                            :help help"
+    ]
+}

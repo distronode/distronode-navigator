@@ -1,0 +1,38 @@
+{
+    "name": "test[ensure env vars get set from config  clear && distronode-navigator exec /bin/env --ee True --ll debug --mode stdout]",
+    "index": 2,
+    "comment": "ensure env vars get set from config",
+    "additional_information": {
+        "present": [
+            "DISTRONODE_COLLECTIONS_PATHS=/tmp/collections"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "DISTRONODE_HOST_KEY_CHECKING=False",
+        "DISTRONODE_NAVIGATOR_LOG_LEVEL=debug",
+        "DISTRONODE_NAVIGATOR_COLLECTION_DOC_CACHE_PATH=./.test_logs/tests/integration/actions/exec/test_stdout_config_file.py/collection_doc_cache.db",
+        "AWX_ISOLATED_DATA_DIR=/runner/artifacts/00000000-0000-0000-0000-000000000000",
+        "HOSTNAME=210c869e7acc",
+        "DISTRONODE_CACHE_PLUGIN_CONNECTION=/runner/artifacts/00000000-0000-0000-0000-000000000000/fact_cache",
+        "DISTRONODE_CACHE_PLUGIN=jsonfile",
+        "DISTRONODE_UNSAFE_WRITES=1",
+        "container=podman",
+        "PWD=/home/user/github/distronode-navigator",
+        "HOME=/home/runner",
+        "DISTRONODE_RETRY_FILES_ENABLED=False",
+        "DISTRONODE_NAVIGATOR_PULL_POLICY=never",
+        "DISTRONODE_STDOUT_CALLBACK=awx_display",
+        "DISTRONODE_NAVIGATOR_PLAYBOOK_ARTIFACT_SAVE_AS=./.test_logs/tests/integration/actions/exec/test_stdout_config_file.py/playbook-artifact.log",
+        "DISTRONODE_COLLECTIONS_PATHS=/tmp/collections",
+        "TERM=xterm",
+        "LAUNCHED_BY_RUNNER=1",
+        "DISTRONODE_NAVIGATOR_CONFIG=/home/user/github/distronode-navigator/tests/fixtures/integration/actions/exec/distronode-navigator.yaml",
+        "SHLVL=0",
+        "DISTRONODE_NAVIGATOR_LOG_FILE=./.test_logs/tests/integration/actions/exec/test_stdout_config_file.py/distronode-navigator.log",
+        "DISTRONODE_CALLBACK_PLUGINS=/usr/local/lib/python3.8/site-packages/distronode_runner/callbacks",
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "(venv) bash-5.1$"
+    ]
+}

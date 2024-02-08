@@ -1,0 +1,27 @@
+{
+    "name": "test[config helpconfig with interactive without ee  clear && distronode-navigator config --help-config --ee False --ll debug --mode interactive]",
+    "index": 7,
+    "comment": "config helpconfig with interactive without ee",
+    "additional_information": {
+        "present": [
+            "usage: distronode-config [-h]"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "usage: distronode-config [-h] [--version] [-v] {list,dump,view,init} ...",
+        "View distronode configuration.",
+        "positional arguments:",
+        "  {list,dump,view,init}",
+        "    list                Print all config options",
+        "    dump                Dump configuration",
+        "    view                View configuration file",
+        "    init                Create initial configuration",
+        "options:",
+        "  --version             show program's version number, config file location, configured module search path, module location, executable location and exit",
+        "  -h, --help            show this help message and exit",
+        "  -v, --verbose         Causes Distronode to print more debug messages. Adding multiple -v will increase the verbosity, the builtin plugins currently evaluate up to -vvvvvv. A reasonable level to start is -vvv, connection debugging might require -vvvv.",
+        "(venv) bash$"
+    ]
+}

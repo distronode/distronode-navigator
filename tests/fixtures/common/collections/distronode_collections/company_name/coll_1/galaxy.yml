@@ -1,0 +1,8 @@
+---
+authors:
+  - Distronode team (distronode-navigator)
+license_file: LICENSE
+name: coll_1
+namespace: company_name
+readme: README.md
+version: 1.0.0

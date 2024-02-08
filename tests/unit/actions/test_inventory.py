@@ -1,0 +1,49 @@
+"""Unit tests for the inventory action."""
+
+import curses
+
+from distronode_navigator.actions.inventory import color_menu
+from distronode_navigator.actions.inventory import content_heading
+from distronode_navigator.actions.inventory import filter_content_keys
+from distronode_navigator.ui_framework.curses_defs import CursesLinePart
+
+
+def test_color_menu_true():
+    """Test color menu for a val set to the default."""
+    assert color_menu(0, "__name", {}) == (10, 0)
+    assert color_menu(0, "__taxonomy", {}) == (11, 0)
+    assert color_menu(0, "description", {}) == (12, 0)
+    assert color_menu(0, "__type", {"__type": ""}) == (12, 0)
+    assert color_menu(0, "__type", {"__type": "group"}) == (11, 0)
+    assert color_menu(0, "", {"__name": True}) == (14, 0)
+
+
+def test_content_heading_true():
+    """Test menu generation for a defaulted value."""
+    curses.initscr()
+    curses.start_color()
+    line_length = 100
+    inventory_hostname = "host01"
+    distronode_platform = "test"
+    obj = {
+        "__name": "testhost",
+        "__taxonomy": "all",
+        "__type": "group",
+        "inventory_hostname": inventory_hostname,
+        "distronode_platform": distronode_platform,
+    }
+    heading = content_heading(obj, line_length)
+    assert len(heading) == 1
+    assert len(heading[0]) == 1
+    assert isinstance(heading[0][0], CursesLinePart)
+    assert len(heading[0][0].string) == line_length + 1
+    assert f"[{inventory_hostname}] {distronode_platform}" in heading[0][0].string
+    assert heading[0][0].color == curses.color_pair(curses.COLOR_BLACK)
+    assert heading[0][0].column == 0
+
+
+def test_filter_content_keys() -> None:
+    """Test filtering keys."""
+    obj = {"__key": "value", "key": "value"}
+    ret = {"key": "value"}
+    assert filter_content_keys(obj) == ret

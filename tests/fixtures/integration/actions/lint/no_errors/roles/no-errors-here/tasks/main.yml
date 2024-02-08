@@ -1,0 +1,5 @@
+---
+- name: A properly named task
+  distronode.builtin.assert:
+    that:
+      - true

@@ -1,0 +1,4 @@
+---
+distronode-navigator:
+  execution-environment:
+    enabled: 5

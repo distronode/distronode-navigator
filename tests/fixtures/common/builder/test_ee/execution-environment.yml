@@ -1,0 +1,23 @@
+---
+version: 3
+
+images:
+  base_image:
+    name: registry.fedoraproject.org/fedora:38
+
+dependencies:
+  distronode_core:
+    package_pip: distronode-core
+
+  distronode_runner:
+    package_pip: distronode-runner
+
+  galaxy:
+    collections:
+      - distronode.utils
+
+  python:
+    - distronode-lint
+additional_build_steps:
+  append_final:
+    - RUN echo "Hello from EE"

@@ -1,0 +1,23 @@
+{
+    "name": "test[run playbook with inventory from distronode.cfg without ee  clear && cd /tests/fixtures/integration/actions/run/using_distronode_cfg &&  distronode-navigator run site.yml --ee False --ll debug --mode stdout]",
+    "index": 6,
+    "comment": "run playbook with inventory from distronode.cfg without ee",
+    "additional_information": {
+        "present": [
+            "from.distronode.cfg",
+            "ok=1"
+        ],
+        "absent": [],
+        "compared_fixture": false
+    },
+    "output": [
+        "PLAY [all] *********************************************************************",
+        "TASK [debug] *******************************************************************",
+        "ok: [from.distronode.cfg] => {",
+        "    \"inventory_hostname\": \"from.distronode.cfg\"",
+        "}",
+        "PLAY RECAP *********************************************************************",
+        "from.distronode.cfg           : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0",
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    ]
+}

@@ -1,0 +1,21 @@
+---
+distronode-navigator:
+  distronode:
+    doc:
+      plugin:
+        type: become
+  editor:
+    command: emacs -nw +{line_number} {filename}
+    console: False
+  execution-environment:
+    container-engine: podman
+    enabled: False
+    image: quay.io/distronode/creator-ee:v0.9.2
+  inventory-columns:
+    - distronode_network_os
+    - distronode_network_cli_ssh_type
+    - distronode_connection
+  color:
+    osc4: True
+  logging:
+    level: critical
